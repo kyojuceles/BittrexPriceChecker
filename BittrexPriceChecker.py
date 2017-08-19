@@ -60,7 +60,7 @@ def check_price(config):
                     send_email(email, msg, config['send_email'], config['send_password']);
                 else:
                     print(key + " is not exist");
-                    
+
             else:
                 print(key + "request failed");
 
@@ -83,10 +83,10 @@ def main():
         check_price(config_info);
         time.sleep(5);
 
-#main();
-bittrex = Bittrex(None, None);
-result = bittrex.get_marketsummary('BTC-BCH');
-print(result);
+main();
+#bittrex = Bittrex(None, None);
+#result = bittrex.get_marketsummary('BTC-BCH');
+#print(result);
 
 
 
