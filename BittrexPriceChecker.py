@@ -58,9 +58,11 @@ def check_price(config):
                     infos[key]['active'] = False;
                     print(msg);
                     send_email(email, msg, config['send_email'], config['send_password']);
-
+                else:
+                    print(key + " is not exist");
+                    
             else:
-                print(key + "is not exist");
+                print(key + "request failed");
 
 def OutputConfig(config):
     print('email : {!s}'.format(config['email']));
@@ -81,7 +83,10 @@ def main():
         check_price(config_info);
         time.sleep(5);
 
-main();
+#main();
+bittrex = Bittrex(None, None);
+result = bittrex.get_marketsummary('BTC-BCH');
+print(result);
 
 
 
