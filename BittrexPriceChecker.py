@@ -48,12 +48,13 @@ def check_price(config):
                     high = infos[key]['high'];
                     low = infos[key]['low'];
                     msg = "";
+                    print ('{:.9f} {:.9f} {:.9f}'.format(price, high, low));
                     if price >= high:
                         msg = "{!s}'s price({:.9f}) is higher than {:.9f}".format(key, price, high);
                     elif price <= low:
                         msg = "{!s}'s price({:.9f}) is lower than {:.9f}".format(key, price, low);
                     else:
-                        return;
+                        continue;
 
                     infos[key]['active'] = False;
                     print(msg);
